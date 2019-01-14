@@ -6,6 +6,8 @@ function copy() { cat $1 | pbcopy }
 alias lls="colorls --sort-dirs --long --git-status"
 alias lss="colorls --sort-dirs --report --git-status"
 alias lsss="colorls --tree"
+alias s="say"
+alias cls='clear'
 
 # Custom
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
@@ -13,22 +15,26 @@ alias copysshkey="cat ~/.ssh/id_rsa.pub| pbcopy"
 alias copyip="curl http://ipecho.net/plain | pbcopy"
 alias composer="~/.bin/composer.phar"
 
+# Config Files
+alias hostconfig="sudo vi /private/etc/hosts"
+alias zshconfig="vi ~/.zshrc"
+alias zshreload="source ~/.zshrc; echo zsh reloaded"
+alias ohmyzsh="vi ~/.oh-my-zsh"
+# Commandos
 # Folders
 alias cdh="cd ~"
 alias cddocs="cd ~/Documents"
 alias cdg="cd ~/Documents/git"
 alias cdgit="cd ~/Documents/Git"
-alias cdprop="cd ~/Documents/proposals"
 alias cddoc="cd ~/Documents"
 alias cdd="cd ~/Desktop"
 alias cddown="cd ~/Downloads"
-alias cdb="cd ~/Documents/git/breda"
-alias cdnotes="cd ~/Documents/Git/notulen"
-alias cdbcw="cd ~/Documents/git/bytecode-website"
-alias cddep="cd ~/Documents/git/deployment"
-alias cdinf="cd ~/Documents/git/infrastructure"
 
-
+alias bcg="cd ~/Documents/BC_GIT/"
+alias rg="cd ~/Documents/R_GIT/"
+alias rd="cd ~/Documents/R_DOC/"
+alias bcp="cd ~/Documents/BC_Gsuite/"
+alias phd="cd /Volumes/Projects_hd"
 #export PATH=/Applications/MAMP/bin/php/php7.1.8/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 source ~/.profile
@@ -92,3 +98,8 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/Cellar/terraform/0.11.7/bin/terraform terraform
 
 export PAGER="most"
+
+# node version manager
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
